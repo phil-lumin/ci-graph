@@ -1,3 +1,10 @@
+:root {
+  --color-accent: #ff7b00;
+  --color-bg: #13161b;
+  --color-text: #cbd5e0;
+  --color-border: #2d3748;
+}
+
 #root {
   margin: 0 auto;
   padding: 0;
@@ -12,30 +19,29 @@
   flex: 1;
   position: relative;
   overflow: auto;
-  border-right: 1px solid #2d3748;
-
-  .prism-code-editor {
-    height: 100%;
-    background-color: #111216;
-
-    ::placeholder {
-      color: rgb(255, 255, 255);
-      font-size: 2rem;
-      font-weight: 500;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      translate: -50% -50%;
-      opacity: 0.5;
-    }
-  }
+  border-right: 1px solid var(--color-border);
 }
+.app-input .prism-code-editor {
+  height: 100%;
+  background-color: var(--color-bg);
+}
+
+.app-input ::placeholder {
+  color: var(--color-accent);
+  font-size: 2rem;
+  font-weight: 500;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+}
+
 
 .app-output {
   flex: 1;
   align-items: center;
   padding: 1rem;
-  background: #171a20;
+  background: var(--color-bg);
   color: white;
   overflow: auto;
   text-align: center;
@@ -47,8 +53,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 0.3rem 1rem;
-  font-size: 0.9rem;
+  padding: 0.5rem 1rem;
   font-family: "Courier New", Courier, monospace;
   text-align: center;
   background: rgba(180, 0, 0, 0.8);
@@ -78,19 +83,10 @@ ul {
 }
 
 ::-webkit-scrollbar-track {
-  border-radius: 10px;
-  background: #000;
+  background: rgb(0 0 0 / 0.4);
 }
 
 ::-webkit-scrollbar-thumb{
   border-radius: 10px;
-  background: #2d3748;
-}
-
-::-webkit-scrollbar-thumb:hover{
-  background: #39455a;
-}
-
-::-webkit-scrollbar-thumb:active{
-  background: #39455a;
+  background: var(--color-border);
 }

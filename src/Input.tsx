@@ -6,19 +6,19 @@ import "prism-react-editor/themes/prism-tomorrow.css";
 
 export default function Input({ onChange }: InputProps) {
 	return (
-		<Editor
-			language="yaml"
-			value=""
-			onUpdate={onChange}
-			textareaProps={{
-				placeholder: "Paste your config...",
-				name: "editor",
-				"aria-label": "Code editor"
-			}}
-		>
-			{(editor) => <BasicSetup editor={editor} />}
-		</Editor>
-	);
+    <Editor
+      language="yaml"
+      value=""
+      onUpdate={onChange}
+      textareaProps={{
+        placeholder: "-- Paste a CircleCi config --",
+        name: "editor",
+        "aria-label": "Code editor",
+      }}
+    >
+      {(editor) => <BasicSetup editor={editor} />}
+    </Editor>
+  );
 }
 
 interface InputProps {

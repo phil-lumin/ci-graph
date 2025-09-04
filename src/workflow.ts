@@ -58,13 +58,13 @@ export function workflowToDOT(workflow: Workflow): string {
 
 	workflow.jobs?.forEach((job) => {
 		job.requirements?.forEach((item) => {
-			deps.push(`\t"${item}" -> "${job.name}" [color="#cf6400" arrowsize=0.8]`);
+			deps.push(`\t"${item}" -> "${job.name}" [color="#ff7b00cc", arrowsize="0.7"]`);
 		});
 	});
 
 	return `digraph dependencies {
-    bgcolor="#171a20"
-    node [shape="box", color="#3c4961ff", style="rounded,filled", fillcolor="#2d3748", fontsize="11", fontcolor="#cbd5e0", margin="0.3, 0", height="0.4", fontname="Inter,monospace"]
+    bgcolor="transparent"
+    node [shape="box", color="#3c4961ff", style="rounded,filled", fillcolor="#28354bff", fontsize="11", fontcolor="#cbd5e0", margin="0.3, 0", height="0.4", fontname="Inter,monospace"]
     ${deps.join(";\n")}
   }`;
 }
